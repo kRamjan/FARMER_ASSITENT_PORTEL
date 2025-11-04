@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login - AgriSens</title>
+    <style>
+      :root{ --green:#2e8b57; --green-dark:#256d45; --white:#ffffff; --muted:#f4f6f5 }
+      *{box-sizing:border-box}
+      body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--muted);margin:0;display:flex;align-items:center;justify-content:center;height:100vh}
+      .card{background:var(--white);width:100%;max-width:420px;padding:28px;border-radius:12px;box-shadow:0 6px 24px rgba(46,139,87,0.08);text-align:center}
+      h2{color:var(--green);margin:0 0 18px;font-size:22px}
+      form{display:flex;flex-direction:column;gap:12px}
+      .input{width:100%;padding:12px 14px;border:1px solid #e6eaea;border-radius:8px;font-size:15px}
+      .actions{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+      button{background:var(--green);color:var(--white);border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
+      button:hover{background:var(--green-dark)}
+      .small{font-size:13px;color:#556b5f}
+      a.link{color:var(--green);text-decoration:none;font-weight:600}
+      @media (max-width:420px){.card{margin:16px}}
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Login to AgriSens</h2>
+      <form action="/login" method="POST">
+        <input class="input" type="email" name="email" placeholder="Email" required />
+        <input class="input" type="password" name="password" placeholder="Password" required />
+        <div class="actions">
+          <span class="small">New here? <a class="link" href="/signup">Sign up</a></span>
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
