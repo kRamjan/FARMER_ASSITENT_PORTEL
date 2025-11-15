@@ -1,24 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>AgriSens - Main</title>
     <style>
-      body { font-family: Arial, sans-serif; background: #f2f2f2; text-align:center; padding-top:80px }
-      .card { background:#fff; display:inline-block; padding:28px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06) }
-      a.btn { display:inline-block; margin:8px; padding:10px 18px; background:#2e8b57; color:#fff; text-decoration:none; border-radius:6px }
-      a.btn:hover { background:#256d45 }
+      :root{ --green:#2e8b57; --white:#ffffff }
+      html,body{height:100%;margin:0}
+      body{
+        font-family: Inter, system-ui, Arial, sans-serif;
+        color:var(--white);
+        background-image: url('https://cdn.pixabay.com/photo/2024/10/27/07/12/women-9152739_640.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position:relative;
+      }
+      /* dark overlay to increase text contrast */
+      .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.45));}
+
+      .topbar{position:relative;display:flex;justify-content:space-between;align-items:center;padding:22px 32px}
+      .brand{font-size:40px;font-weight:700;color:var(--white);text-shadow:0 2px 10px rgba(0,0,0,0.5)}
+      .nav{display:flex;gap:12px}
+      .nav a{color:var(--white);background:rgba(82, 59, 59, 0.516);padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.06)}
+      .nav a:hover{background:var(--white);color:var(--green)}
+
+      .center-wrap{position:relative;min-height:calc(100vh - 80px);display:flex;align-items:center;justify-content:center;padding:40px}
+      .hero{max-width:1000px;text-align:center}
+      .hero h1{font-size:clamp(28px,6vw,64px);margin:0 0 12px;line-height:1.02;text-shadow:0 6px 30px rgba(0,0,0,0.5)}
+      .hero p{font-size:18px;margin:0 0 20px;color:rgba(255,255,255,0.92)}
+      .cta{display:flex;gap:12px;justify-content:center}
+      .cta a{padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700}
+      .btn-primary{background:var(--green);color:var(--white)}
+      .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.85);color:var(--white)}
+
+      /* small screens: move heading to top-left and nav to top-right already handled by topbar */
+      @media (min-width:900px){
+        .hero{text-align:center}
+      }
+
+      /* place main site heading top-left as well (optional duplicate) */
+      .topleft-heading{position:absolute;left:32px;top:28px;color:var(--white);font-weight:700;font-size:18px;text-shadow:0 2px 8px rgba(0,0,0,0.45)}
+      @media (max-width:640px){.nav a{padding:8px 10px;font-size:14px}}  
+      
     </style>
   </head>
   <body>
-    <div class="card">
-      <h1>Welcome to AgriSens</h1>
-      <p>Your smart agriculture assistant</p>
-      <div>
-        <a class="btn" href="/login">Login</a>
-        <a class="btn" href="/signup">Sign Up</a>
-      </div>
+    <div class="overlay"></div>
+    <header class="topbar">
+      <div class="brand">AgriSens</div>
+      <nav class="nav">
+        <a  href="/login">Login</a>
+        <a  href="/signup">Sign Up</a>
+      </nav>
+    </header>
+
+    <div class="center-wrap">
+      <main class="hero">
+        <h1>Your Smart Farming Assistant</h1>
+        <p>Get personalized crop recommendations, plant disease identification, and weather forecasts to maximize yields and reduce risk.</p>
+        <div class="cta">
+          <a class="btn-primary" href="/index">Open App</a>
+          <a class="btn-outline" href="/guide/index.html" target="_blank">Smart Farming Guide</a>
+        </div>
+      </main>
     </div>
+
     <script src="/js/main.js"></script>
   </body>
 </html>
