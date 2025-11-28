@@ -1,66 +1,199 @@
-AgriSens — Web app and ML projects
+🌾 FARMER ASSISTANT PORTAL
 
-This repository contains the AgriSens web app and related ML projects (crop recommendation and plant disease identification).
+A Smart Agriculture Support System with Crop Recommendation & Plant Disease Detection
 
-Quick start (local development)
 
-Requirements
-- Node.js (14+ recommended)
-- npm
-- MongoDB (local or Atlas) running; default connection used by the app: mongodb://localhost:27017/agrisens
+<img width="940" height="548" alt="image" src="https://github.com/user-attachments/assets/6f42d245-0492-4842-95de-b8b4e8799684" />
 
-Install and run
-```powershell
-# from repository root
+
+
+
+
+
+
+📘 Overview
+
+The Farmer Assistant Portal is an integrated agricultural support platform designed to assist farmers with data-driven decisions. It combines machine learning, image processing, and a clean web-based interface to help users:
+
+Identify plant diseases from images
+
+Get intelligent crop recommendations
+
+Learn how to manage crop diseases through an in-depth disease guide
+
+Interact with a user-friendly portal designed specifically for farmers
+
+This system aims to reduce crop loss, improve decision-making, and empower farmers with simple, accessible technology.
+
+🚀 Key Features
+
+
+<img width="940" height="378" alt="image" src="https://github.com/user-attachments/assets/5a1ac57a-e51d-48f2-9193-75c200b0419d" />
+
+
+
+✅ 1. Crop Recommendation System
+
+<img width="940" height="525" alt="image" src="https://github.com/user-attachments/assets/d03ae822-365f-489a-a5e6-1343c0120ff9" />
+
+
+
+Suggests the best crop based on soil, climate, and environmental parameters
+
+Uses trained ML models for accurate recommendations
+
+✅ 2. Plant Disease Detection System
+
+
+<img width="716" height="1172" alt="image" src="https://github.com/user-attachments/assets/27d50278-d9fe-4ce3-b6cf-52c76f5b8756" />
+
+
+Accepts input images of plant leaves
+
+Detects disease type using a trained CNN model
+
+Provides treatment suggestions
+
+✅ 3. Farmer Web Portal
+
+Easy-to-use interface built with modern web technologies
+
+Dashboard for crop recommendation, disease detection, and results viewing
+
+✅ 4. Disease Guide
+
+Contains disease descriptions, symptoms, and remedies
+
+Acts as a reference for farmers and agriculture students
+
+✅ 5. Integrated Research Paper
+
+“Smart Crop Recommendation System with Plant Disease Identification” included for academic reference
+
+📁 Project Directory Structure
+FARMER_ASSITENT_PORTEL/
+│
+├── AgriSens-web-app/                 # Main web application (frontend + backend)
+│
+├── CROP-RECOMMENDATION/              # ML module for crop recommendation
+│
+├── PLANT-DISEASE-IDENTIFICATION/     # ML module for disease detection
+│
+├── Results/                          # Sample output results
+│
+├── DISEASE-GUIDE.md                  # Detailed disease information & remedies
+│
+├── Smart_Crop_Recommendation_System_with_Plant_Disease_Identification.pdf
+│                                      # Research paper related to project
+│
+└── README.md                         # (This file)
+
+🛠️ Technologies Used
+🔹 Frontend
+
+HTML / CSS / JavaScript
+
+React.js (if applicable)
+
+Responsive UI design
+
+🔹 Backend
+
+Node.js
+
+Express.js
+
+🔹 Database
+
+MongoDB (local or MongoDB Atlas)
+
+🔹 Machine Learning
+
+Python
+
+TensorFlow / Keras
+
+Scikit-learn
+
+OpenCV
+
+⚙️ Installation & Setup
+1. Clone the repository
+git clone https://github.com/kRamjan/FARMER_ASSITENT_PORTEL.git
+cd FARMER_ASSITENT_PORTEL
+
+🌐 Setting up the Web App
+
+Navigate to the web app folder:
+
+cd AgriSens-web-app
+
+
+Install dependencies:
+
 npm install
-# start server
+
+
+Start server:
+
 npm start
-# development with auto-reload (requires nodemon)
+
+
+Or for development with live reload:
+
 npm run dev
-```
 
-App URLs (when server runs on http://localhost:3000)
-- Landing page: http://localhost:3000/
-- Login: http://localhost:3000/login
-- Signup: http://localhost:3000/signup
-- App entry (requires login): http://localhost:3000/index
 
-Create a GitHub repo and push (two options)
+Open the portal in your browser:
 
-Option A — using GitHub website
-1. Create a new empty repository on GitHub (no README, no .gitignore, no license).
-2. In your local repo root run:
-```powershell
-git init
-git add .
-git commit -m "Initial commit - AgriSens"
-# add your GitHub remote (replace <YOUR_USERNAME> and <REPO_NAME>)
-git remote add origin https://github.com/<YOUR_USERNAME>/<REPO_NAME>.git
-git branch -M main
-git push -u origin main
-```
+http://localhost:3000/
 
-Option B — using GitHub CLI (gh)
-```powershell
-# login first if not already
-gh auth login
-# create repo (private by default, add --public to make public)
-gh repo create <YOUR_USERNAME>/<REPO_NAME> --confirm --public
-# push
-git init
-git add .
-git commit -m "Initial commit - AgriSens"
-git branch -M main
-git push -u origin main
-```
+🧠 Running the ML Models
+Crop Recommendation
+cd CROP-RECOMMENDATION
+python recommend.py
 
-Notes for deployment
-- If you want to host this app online, you'll need to provide a MongoDB instance (MongoDB Atlas or a VM) and an environment variable for the DB connection string. Currently the server connects to mongodb://localhost:27017/agrisens.
-- For production logging and session persistence use a dedicated session store (e.g., connect-mongo) and set session secret via environment variables.
+Plant Disease Identification
+cd PLANT-DISEASE-IDENTIFICATION
+python detect.py
 
-If you'd like, I can:
-- Create the Git repository here (local only) and make the initial commit for you.
-- Attempt to create a GitHub repository using the GitHub CLI (`gh`) if you want me to run the commands here (I'll prompt before any network action).
-- Add a simple GitHub Actions workflow for Node.js tests or deployment.
 
-Tell me which of the above you'd like me to do next (create repo locally, push via gh, or add CI).
+(Exact file names may vary — adjust based on your folder)
+
+🧑‍🌾 How to Use the Portal
+
+Launch the web app
+
+Create an account or log in
+
+Use dashboard options:
+
+Crop Recommendation: enter soil/climate data
+
+Disease Detection: upload a leaf image
+
+View the results and suggested remedies
+
+Explore Disease Guide for more details
+
+📄 Research Paper Included
+
+The repository contains a full academic research paper:
+📘 Smart Crop Recommendation System with Plant Disease Identification
+
+Useful for students, researchers, and developers.
+
+🔮 Future Enhancements
+
+Real-time weather API integration
+
+Multiple crop datasets
+
+Mobile app version
+
+Multi-language support for farmers
+
+Voice-based query system
+
+Additional crop disease categories
+
